@@ -1,6 +1,3 @@
-set number
-set tabstop=4
-set shiftwidth=4
 set expandtab
 set cursorline
 "set cursorcolumn
@@ -15,4 +12,16 @@ autocmd VimEnter * NERDTree
 autocmd BufWinEnter * silent NERDTreeMirror
 " enable line numbers
 let NERDTreeShowLineNumbers=1
+" read cl file with cpp file syntax highlight
 au BufReadPost *.cl set syntax=cpp
+" press <F9> to mirror all NERDTree
+nnoremap <F9> :tabdo NERDTreeMirror <CR>
+" sessions
+autocmd VimLeave * call StoreSession()
+
+
+" Function definition
+function StoreSession()
+    :tabdo NERDTreeClose
+    mksession! .leo.vim
+endfunction
