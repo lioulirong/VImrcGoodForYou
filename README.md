@@ -11,6 +11,19 @@ or you can just "install" NERDTree with the following command
 git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 ```
-2. to be added
+2. no more dependency
 
 Everything is done. Enjoy yourself!
+
+### Features
+1. Open NERDTree when VIM is entered
+2. Mirror NERDTree when new buffer entered
+3. Press F9 to mirror NERDTree to all buffer(tab)
+4. Auto save session as .leo.vim after leaving VIM
+
+Hint
+  Restore session using 
+```bash
+  vim -S .leo.vim
+```
+  
