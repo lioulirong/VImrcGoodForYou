@@ -1,5 +1,6 @@
 set expandtab
 set cursorline
+set number
 "set cursorcolumn
 set smartindent
  "press <Tab> to open file/dir in new tab
