@@ -3,7 +3,17 @@
 This is a .vimrc file which is good for you.
 The dependency is list as below:
 
-1. NERDTRree :
+1. Vundle : 
+please refer to this site [Vundle](https://github.com/VundleVim/Vundle.vim).
+To install Vundle:
+	1. Set up Vundle:
+	```bash
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim	
+	```
+	2. Install:
+	Launch VIM and run `:PluginInstall` 
+
+2. NERDTRree :
 
 please refer to this site: [The NERDTree](https://github.com/preservim/nerdtree)
 or you can just "install" NERDTree with the following command
@@ -11,7 +21,16 @@ or you can just "install" NERDTree with the following command
 git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 ```
-2. no more dependency
+3. NERDCommenter:
+please refer to this site: [The NERDCommenter](https://github.com/preservim/nerdcommenter).
+	1. Add Plugin 'preservim/nerdcommenter' to your vimrc file.
+	2. Reload your vimrc or restart
+	3. Run :BundleInstall
+	4. After installation, make sure this line appears in your vimrc:
+```vimrc
+filetype plugin on
+```
+
 
 Everything is done. Enjoy yourself!
 
