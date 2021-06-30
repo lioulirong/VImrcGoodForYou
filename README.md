@@ -12,10 +12,8 @@ To install Vundle:
 	```
 	2. Install:
 	Launch VIM and run `:PluginInstall` 
-:::info
-The Vundle manages the following dependency.
-Just run `:PluginInstall` and `BundleInstall`.
-:::
+> The Vundle manages the following dependency.
+> Just run `:PluginInstall` and `BundleInstall`.
 2. NERDTRree :
 
 please refer to this site: [The NERDTree](https://github.com/preservim/nerdtree)
