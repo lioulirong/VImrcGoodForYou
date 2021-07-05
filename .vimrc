@@ -30,7 +30,7 @@ filetype plugin on
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" ----------------------VUNDLE END HERE----------------------------
+" ***************VUNDLE END HERE*****************************
 
 "----------------NATIVE VIM START----------------------
 set tabstop=4
@@ -42,7 +42,14 @@ set number
 set smartindent
 " read cl file with cpp file syntax highlight
 au BufReadPost *.cl set syntax=cpp
-"----------------NATIVE VIM END----------------------
+"check if the OS is windows  
+if has('win32')
+    set guifont=consolas:h14 " increase font size
+    colorscheme industry " change gVIM's default background
+    syntax on
+    set backspace=indent,eol,start " in case backspace doesn't work
+endif
+" *****************NATIVE VIM END******************
 
 
 "------------------NERDTree START-----------------
@@ -60,7 +67,8 @@ let NERDTreeShowLineNumbers=1
 nnoremap <F9> :tabdo NERDTreeMirror <CR>
 " sessions
 autocmd VimLeave * call StoreSession()
-"------------------NERDTree END--------------------
+" **************NERDTree END*********************
+
 
 
 " Function definition

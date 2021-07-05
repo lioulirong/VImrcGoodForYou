@@ -2,29 +2,46 @@
 This is a .vimrc file which is good for you.
 
 ### Installation:
+
+#### Linux
+
 1. copy `.vimrc` to `~/`
 
 2. Set up Vundle:
     ```bash
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim	
     ```
+    
 3. Install:
     Launch VIM and run `:PluginInstall` or `:BundleInstall`
+
+#### Windows (gVIM)
+
+1.  copy `.vimrc` to `C:/Users/<username>/.vimrc`
+
+2. Ser up Vundle:
+
+   ```bash
+   git clone https://github.com/VundleVim/Vundle.vim.git C:/Users/<username>/.vim/bundle/Vundle.vim
+   ```
+3. Install:
+      Launch VIM and run `:PluginInstall` or `:BundleInstall`
 
 ### Dependency
 
 **In case steps in Installation doesn't work, you can install every dependency manually.**
 
 1. Vundle : 
-  please refer to this site [Vundle](https://github.com/VundleVim/Vundle.vim).
-  To install Vundle:
+    please refer to this site [Vundle](https://github.com/VundleVim/Vundle.vim).
+    To install Vundle:
 
   1. Set up Vundle:
   ```bash
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim	
   ```
   2. Install:
-  Launch VIM and run `:PluginInstall` 
+
+    Launch VIM and run `:PluginInstall` 
 
 2. NERDTRree :
 
@@ -60,5 +77,11 @@ Hint
   Restore session using 
 ```bash
   vim -S .leo.vim
+```
+
+or in VIM
+
+```vimrc
+:source .leo.vim
 ```
 
