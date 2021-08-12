@@ -66,12 +66,18 @@ filetype plugin on
 Everything is done. Enjoy yourself!
 
 ### Features
-1. All NERDTree functionality
-2. Open NERDTree when VIM is entered
-3. Mirror NERDTree when new buffer entered
-4. Press F9 to mirror NERDTree to all buffer(tab)
-5. Auto save session as .leo.vim after leaving VIM
-6. all NERDCommenter funtionality
+
+####Costumized feature
+
+1. Press F9 to open NERDTree
+2. Press F9 to toggle line number display and NERDTree
+3. Auto save session as .leo.vim after leaving VIM
+
+#### Plugins
+
+1. NERDTree
+2. NERDComment
+3. Ack
 
 Hint
   Restore session using 
