@@ -15,6 +15,11 @@ This is a .vimrc file which is good for you.
 3. Install:
     Launch VIM and run `:PluginInstall` or `:BundleInstall`
 
+4. Install Ack library: [hint](https://github.com/mileszs/ack.vim/issues/156#issuecomment-260256180)
+    ```bash
+    sudo apt-get install ack-grep
+    ```
+
 #### Windows (gVIM)
 
 1.  copy `.vimrc` to `C:/Users/<username>/.vimrc`
