@@ -75,8 +75,10 @@ Everything is done. Enjoy yourself!
 ####Costumized feature
 
 1. Press F9 to open NERDTree
-2. Press F9 to toggle line number display and NERDTree
-3. Auto save session as .leo.vim after leaving VIM
+2. Press F9 to toggle on NERDTree
+3. Press F8 to toggle line numbering
+4. Auto save session as .leo.vim after leaving VIM
+
 
 #### Plugins
 
