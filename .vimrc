@@ -57,7 +57,16 @@ if has('win32')
 endif
 " toggle line number and NERDTree
 nnoremap <F8> : call ToggleLiNuAndNerdtree() <CR><CR>
+"if filereadable(".leo.vim")
+"   call inputsave()
+"   if input("A closed session found, do you want to reload it?(y/n):")=="y"
+"       source .leo.vim    
+"   endif
+"   call inputrestore()
+"endif
 " *****************NATIVE VIM END******************
+
+
 
 
 "------------------NERDTree START-----------------
@@ -67,11 +76,13 @@ let NERDTreeMapOpenInTab='<Tab>' "press <Tab> to open file/dir in new tab
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " enable line numbers
 let NERDTreeShowLineNumbers=1
+" show hidden file in nerdtree
+let NERDTreeShowHidden=1
 " press <F9> to mirror all NERDTree
 nnoremap <F9> :NERDTree <CR>
 " sessions
 autocmd VimLeave * call StoreSession()
-
+autocmd VimEnter * call RestoreSession()
 " Start NERDTree and leave the cursor in it.
 "autocmd VimEnter * NERDTree
 " Open the existing NERDTree on each new tab.
@@ -85,6 +96,22 @@ autocmd VimLeave * call StoreSession()
 function StoreSession()
     :tabdo NERDTreeClose
     mksession! .leo.vim
+endfunction
+
+" Restore previous session if .leo.vim is found
+function RestoreSession()
+    " on sourcing .leo.vim file, argc and argv will reset, so save them in
+    " variables
+    let foo=argv(0) 
+    let argNum=argc()
+    if filereadable(".leo.vim")
+        if input("A stored session found, do you want to load it?(y/n):")=="y"
+            source .leo.vim " on sourcing .leo.vim file, argc and argv will reset
+        endif
+        if (argNum>0)
+            exe "tabnew" foo
+        endif
+    endif
 endfunction
 
 " function for toggle line number and nerdtree
