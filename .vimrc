@@ -94,8 +94,13 @@ autocmd VimEnter * call RestoreSession()
 
 " function for storing session as file ,leo.vim
 function StoreSession()
-    :tabdo NERDTreeClose
-    mksession! .leo.vim
+    if (input("Do you want save session?(y/n):")=="y")        
+        :tabdo NERDTreeClose
+        mksession! .leo.vim
+    else
+        if (filereadable(".leo.vim"))
+            call system("rm .leo.vim");
+    endif
 endfunction
 
 " Restore previous session if .leo.vim is found
