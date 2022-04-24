@@ -4,22 +4,12 @@ This is a .vimrc file which is good for you.
 ### Installation:
 
 #### Linux
-
-1. copy `.vimrc` to `~/`
-
-2. Set up Vundle:
+1. make
     ```bash
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim	
+        make
     ```
+2. done
     
-3. Install:
-    Launch VIM and run `:PluginInstall` or `:BundleInstall`
-
-4. Install Ack library: [hint](https://github.com/mileszs/ack.vim/issues/156#issuecomment-260256180)
-    ```bash
-    sudo apt-get install ack-grep
-    ```
-
 #### Windows (gVIM)
 
 1.  copy `.vimrc` to `C:/Users/<username>/.vimrc`
@@ -70,31 +60,19 @@ filetype plugin on
 
 Everything is done. Enjoy yourself!
 
-### Features
+### Features/Plugin
+Don't forget to leverage the power of plugin
 
-####Costumized feature
+#### Plugins
+* NerdComment
+* NerdTree
+* Ack: grep-like package
+
+#### Feature
 
 1. Press F9 to open NERDTree
 2. Press F9 to toggle on NERDTree
 3. Press F8 to toggle line numbering
-4. Auto save session as .leo.vim after leaving VIM
-
-
-#### Plugins
-
-1. NERDTree
-2. NERDComment
-3. Ack
-
-Hint
-  Restore session using 
-```bash
-  vim -S .leo.vim
-```
-
-or in VIM
-
-```vimrc
-:source .leo.vim
-```
+4. Save and restore session (.leo.vim)
+5. Show number on each tab (tabnew)
 
