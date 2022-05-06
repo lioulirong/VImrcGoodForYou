@@ -9,6 +9,8 @@ This is a .vimrc file which is good for you.
         make
     ```
 2. done
+3.Possible extra work:
+	Build Universal ctags yourself.
     
 #### Windows (gVIM)
 
@@ -56,7 +58,8 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 ```vimrc
 filetype plugin on
 ```
-4. universal ctags
+4. Universal ctags
+To build it from source: https://docs.ctags.io/en/latest/autotools.html
 
 Everything is done. Enjoy yourself!
 
@@ -70,9 +73,9 @@ Don't forget to leverage the power of plugin
 
 #### Feature
 
-1. Press F9 to open NERDTree
-2. Press F9 to toggle on NERDTree
-3. Press F8 to toggle line numbering
-4. Save and restore session (.leo.vim)
-5. Show number on each tab (tabnew)
+1. Press F9 to toggle on NERDTree
+2. Press F8 to toggle line numbering
+3. Save and restore session (.leo.vim) with `:Mksession`
+4. Show number on each tab (tabnew)
+5. Press F1 to toggle tagbar
 
