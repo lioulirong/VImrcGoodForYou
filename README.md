@@ -56,7 +56,7 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 ```vimrc
 filetype plugin on
 ```
-
+4. universal ctags
 
 Everything is done. Enjoy yourself!
 
