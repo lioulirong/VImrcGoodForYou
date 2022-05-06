@@ -1,57 +1,43 @@
-" ----------------------VUNDLE MANAGEMENT START HERE--------------------------
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" install NERDTree
-Plugin 'preservim/nerdtree'
-" install NERDCommentor
-Plugin 'preservim/nerdcommenter'
-" install ack.vim (search tool for vim)
-Plugin 'mileszs/ack.vim'
-" tagbar
-Plugin 'preservim/tagbar'
-" All of your Plugins must be added before the following line
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-filetype plugin on
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" ***************VUNDLE END HERE*****************************
-
-"----------------NATIVE VIM START----------------------
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set cursorline
 set number
-"set cursorcolumn
 set smartindent
+set ruler " show the cursor position all the time
+set cursorcolumn
+
+" playing tagbar
+nmap <F1> :TagbarToggle<CR>
+
+syntax on
+colorscheme morning
+
+" search
+set hlsearch
+set showmatch
+set wildmode=longest,list
+set matchpairs+=<:>
+
+" status line
+set laststatus=2
+set statusline=%f\ %h%w%m%r\ %#warningmsg#%*%=%(%{getcwd()}\ %l,%c%V\ %=\ %P%)
+
+" in case backspace not wotrking
+set backspace=indent,eol,start
+
 " read cl file with cpp file syntax highlight
 au BufReadPost *.cl set syntax=cpp
-" change VIM's default background
-colorscheme industry 
+au BufReadPost *.make set ft=make
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a " to disable: set mouse&
+endif
+
 "check if the OS is windows  
 if has('win32')
     set guifont=consolas:h14 " increase font size
-    syntax on
     set backspace=indent,eol,start " in case backspace doesn't work
     set guifont=consolas:h14 " increase font size
 endif
@@ -81,7 +67,7 @@ let NERDTreeShowHidden=1
 " press <F9> to mirror all NERDTree
 nnoremap <F9> :NERDTree <CR>
 " sessions
-autocmd VimLeave * call StoreSession()
+"autocmd VimLeave * call StoreSession()
 autocmd VimEnter * call RestoreSession()
 " Start NERDTree and leave the cursor in it.
 "autocmd VimEnter * NERDTree
@@ -92,15 +78,14 @@ autocmd VimEnter * call RestoreSession()
 
 "------------------ Function definition--------------
 
+command Mksession call StoreSession()
+
 " function for storing session as file ,leo.vim
 function StoreSession()
-    if (input("Save session?(y/n):")=="y")        
-        :tabdo NERDTreeClose
-        mksession! .leo.vim
-    else
-        if (filereadable(".leo.vim"))
-            call system("rm .leo.vim");
-    endif
+    :tabdo NERDTreeClose
+    mksession! .leo.vim
+    "call system("rm .leo.vim");
+    echo "Session saved"
 endfunction
 
 " Restore previous session if .leo.vim is found
@@ -117,6 +102,7 @@ function RestoreSession()
             exe "tabnew" foo
         endif
     endif
+    "call system("rm .leo.vim")
 endfunction
 
 " function for toggle line number and nerdtree
@@ -176,3 +162,42 @@ if exists("+showtabline")
     set showtabline=1
     highlight link TabNum Special
 endif
+" ----------------------VUNDLE MANAGEMENT START HERE--------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" install NERDTree
+Plugin 'preservim/nerdtree'
+" install NERDCommentor
+Plugin 'preservim/nerdcommenter'
+" install ack.vim (search tool for vim)
+Plugin 'mileszs/ack.vim'
+" tagbar
+Plugin 'preservim/tagbar'
+" All of your Plugins must be added before the following line
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+filetype plugin on
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" ***************VUNDLE END HERE*****************************
+
+"----------------NATIVE VIM START----------------------
