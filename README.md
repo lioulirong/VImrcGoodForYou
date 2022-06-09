@@ -73,9 +73,16 @@ Don't forget to leverage the power of plugin
 
 #### Feature
 
-1. Press F9 to toggle on NERDTree
-2. Press F8 to toggle line numbering
-3. Save and restore session (.leo.vim) with `:Mksession`
-4. Show number on each tab (tabnew)
-5. Press F1 to toggle tagbar
+1. Save and restore session (.leo.vim) with `:Mksession`
+2. Show number on each tab (tabnew)
+3. Custom key map:
+	* `mm`: set mouse off (&)
+	* `MM`: set moues on (=a)
+	* `F1`: toggle tagbar
+	* `F8`: toggle line numbering
+	* `F9`: toggle on NERDTree
+	* `yw`: copy current word 
 
+#### Related link
+
+* My vim note : [Vim tips](https://hackmd.io/0K-p9DGaRZKBBAN0YsMPDg?view#Tips)
