@@ -7,8 +7,14 @@ set smartindent
 set ruler " show the cursor position all the time
 set cursorcolumn
 
+" Key mapping
+nnoremap mm :set mouse& <CR><CR>
+nnoremap MM :set mouse=a <CR><CR>
+nnoremap yw viwp
+
 " playing tagbar
 nmap <F1> :TagbarToggle<CR>
+let g:tagbar_ctags_bin='$HOME/bin/bin/ctags'
 
 syntax on
 colorscheme morning
@@ -29,6 +35,8 @@ set backspace=indent,eol,start
 " read cl file with cpp file syntax highlight
 au BufReadPost *.cl set syntax=cpp
 au BufReadPost *.make set ft=make
+au BufReadPost *.pjx set ft=proteus_pjx
+au BufReadPost *.blk set ft=proteus_pjx
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
